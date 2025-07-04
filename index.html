@@ -1,0 +1,740 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/dc760132e5.js" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="p-4 flex bg-white items-center justify-between">
+    <a href="" id="left" class="flex space-x-3 items-center flex-1">
+      <img src="assets/otaku.png" alt="" class=" max-h-10 sm:max-h-12 animate-wiggly">
+      <span
+        class="font-loony font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent ">AniMate</span>
+    </a>
+
+    <div id="middle" class="lg-menu hidden  lg:flex gap-12">
+      <a href="" class="nav-anchor">Top Anime</a>
+      <a href="" class="nav-anchor">Explore</a>
+      <a href="" class="nav-anchor">Subscribe</a>
+      <a href="" class="nav-anchor">About</a>
+      <a href="" class="nav-anchor">Login</a>
+    </div>
+    <div id="right" class="flex flex-1 justify-end">
+      <button
+        class="hidden lg:flex items-center gap-2 border border-gray-400 px-6 py-2 rounded-lg group hover:border-gray-600 hover:shadow-sm">
+        <i class=" fa-solid fa-bolt group-hover:animate-thunder"></i>
+        <span class="nav-anchor">Community</span>
+
+        <i class=" fa-solid fa-arrow-right transition duration-200 ease-in-out group-hover:animate-arrow "></i>
+      </button>
+    </div>
+
+
+    <button onclick="hamBurger()" class="lg:hidden animate-wiggly">
+      <i
+        class="lift fa-solid fa-burger text-2xl sm:text-3xl bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent"></i>
+
+    </button>
+    <!-- toggleble menu -->
+    <div id="nav-dialog" class="hidden bg-white fixed inset-0 p-4 z-10 lg:hidden">
+      <div class="flex justify-between items-center ">
+        <a href="" class="flex space-x-3 items-center">
+          <img src="assets/otaku.png" alt="" class=" max-h-10 sm:max-h-12 animate-wiggly">
+          <span
+            class="font-loony font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent ">AniMate</span>
+        </a>
+        <button onclick="hamBurger()" class="lg:hidden">
+          <i
+            class="lift fa-solid fa-crosshairs text-2xl sm:text-3xl bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent"></i>
+
+        </button>
+      </div>
+      <div class="flex flex-col">
+
+        <div class="m-1 p-3 hover:bg-gray-50 rounded-lg"><a href="" class="nav-toggle">Top Anime</a></div>
+        <div class="m-1 p-3 hover:bg-gray-50 rounded-lg"><a href="" class="nav-toggle">Explore</a></div>
+        <div class="m-1 p-3 hover:bg-gray-50 rounded-lg"><a href="" class="nav-toggle">Subscribe</a></div>
+        <div class="m-1 p-3 hover:bg-gray-50 rounded-lg"><a href="" class="nav-toggle">About</a></div>
+        <div class="m-1 p-3 hover:bg-gray-50 rounded-lg"><a href="" class="nav-toggle">Login</a></div>
+
+      </div>
+      <div class="h-[2px] bg-gray-100"></div>
+      <button class="flex items-center gap-2 px-6 py-2 w-full hover:bg-gray-50 rounded- mt-5 pl-4">
+
+        <span class="nav-anchor">Community</span>
+
+        <i class="lift fa-solid fa-arrow-right animate-arrow "></i>
+      </button>
+    </div>
+
+
+
+  </nav>
+  <!-- main -->
+  <main class="h">
+    <div id="intro" class=" min-h-dvh   bg-gradient-to-b from-purple-100 via-blue-50 to-transparent">
+      <div id="intro-container"
+        class="pt-4 max-w-4xl mx-auto px-6 pb-18 sm:pb-12  flex flex-col sm:items-center sm:text-center sm:pt-12">
+        <div id="version "
+          class="uplift flex items-center gap-2 border border-purple-500 bg-purple-50 rounded-lg px-3 py-1 my-6 max-w-fit shadow-md active:shadow-lg active:-translate-y-1 hover:shadow-lg hover:-translate-y-1 transition delay-200 ease-in-out group ">
+
+
+          <div class="min-w-2 min-h-2  bg-purple-500 border border-purple-900 rounded-full "></div>
+          <span class="text-purple-500 font-bold font-loony">v2.3: Themes coming soon</span>
+          <i
+            class="fa-solid fa-screwdriver-wrench text-purple-600 group-active:rotate-360  group-hover:rotate-360 transition delay-200 ease-in-out"></i>
+        </div>
+        <div id="mobile-hidden" class=" sm:flex items-center space-x-6 my-6 hidden">
+          <div class="flex items-center space-x-2">
+            <i
+              class="lift fa-solid fa-user-slash bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent "></i>
+            <p class="text-purple-600">No Sign-up Needed</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i
+              class="lift fa-solid fa-list-check bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent "></i>
+            <p class="text-purple-600">Create Your Watchlist</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i
+              class="lift  fa-solid fa-laptop bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent "></i>
+            <p class="text-purple-600 "> Stream Anywhere</p>
+          </div>
+        </div>
+        <h1 class="text-4xl font-bold leading-snug mt-3 sm:text-5xl sm:leading-tight">Explore, Watch & Rate Anime
+          Effortlessly </h1>
+        <p class="text-xl sm:text-purple-500 mt-4 sm:text-2xl sm:mt-8"> Browse trending shows,Airing animes, fan
+          favorites, and hidden
+          gems
+          all in one place under one hood.</p>
+        <div id="btn-container" class=" font-loony mt-12 flex flex-col gap-4 sm:flex-row ">
+          <button class="px-8 py-3 font-semibold rounded-lg text-white bg-purple-700 hover:opacity-90">Explore
+            now</button>
+          <button
+            class="px-8 py-3 font-semibold rounded-lg text-black bg-white border border-gray-400 hover:border-gray-800">Watch
+            now</button>
+        </div>
+      </div>
+      <div id="companies-container" class="flex flex-col gap-10">
+        <div id="companies-title" class="flex justify-center gap-2">
+          <img class="translate-y-2" src="assets/arrow.svg" alt="">
+          <span class="font-semibold  font-loony text-xl">You Fav Characters</span>
+          <img class="-scale-x-100 translate-y-2" src="assets/arrow.svg" alt="">
+        </div>
+        <div id="lines-group " class="flex flex-col gap-4 py-10 overflow-hidden relative">
+          <!-- Left Fade -->
+          <div
+            class="pointer-events-none absolute left-0 top-0 w-12 h-full z-20 bg-gradient-to-r from-[rgba(255,255,255,1)] via-[rgba(255,255,255,0.7)] to-transparent">
+          </div>
+
+          <!-- Right Fade -->
+          <div
+            class="pointer-events-none absolute right-0 top-0 w-12 h-full z-20 bg-gradient-to-l from-[rgba(255,255,255,1)] via-[rgba(255,255,255,0.7)] to-transparent">
+          </div>
+
+
+          <div id="line1" class="flex gap-4 w-screen -translate-x-48 transition-transform ease-linear">
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/naruto.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Naruto</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/Gojo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gojo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/HxH.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gon</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/ichigo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Ichigo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/sukuna.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Sukuna</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/luffy.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Luffy</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/light.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Light</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/guts.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Guts</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/saber.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Saber</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/goku.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Goku</span>
+            </div>
+
+          </div>
+          <div id="line1" class="flex gap-4 w-screen -translate-x-36 transition-transform ease-linear">
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/naruto.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Naruto</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/Gojo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gojo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/HxH.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gon</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/ichigo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Ichigo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/sukuna.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Sukuna</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/luffy.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Luffy</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/light.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Light</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/guts.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Guts</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/saber.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Saber</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/goku.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Goku</span>
+            </div>
+
+          </div>
+          <div id="line1" class="md:hidden flex gap-4 w-screen -translate-x-48 transition-transform ease-linear">
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/naruto.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Naruto</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/Gojo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gojo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/HxH.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Gon</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/ichigo.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Ichigo</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/sukuna.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Sukuna</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/luffy.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Luffy</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/tanjiro.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Tanjiro</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/light.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Light</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/guts.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Guts</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/saber.png" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Saber</span>
+            </div>
+            <div
+              class="sm-cards anime-card flex flex-col justify-center gap-2 items-center  min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <img src="assets/goku.jpg" class="w-12 h-12 md:w-16 md:h-16 rounded-lg" alt="">
+              <span class="text-[14px] font-medium  lg:text-[16px] font-loony">Goku</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    <!-- Explore by category section -->
+    <div id="ways" class="px-6 sm:px-12 lg:px-36 pb-12 pt-8 max-w-screen mt-5 mx-auto  lg:mt-16 flex flex-col gap-y-5 ">
+      <h2
+        class="font-loony  text-4xl text-center md:text-left sm:text-5xl font-bold mb-14 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent ">
+        Explore all Otaku Stuff</h2>
+      <div class="p-[1px] rounded-xl border border-purple-200">
+        <div id="cont-1" class="rounded-xl  px-8 py-12 flex flex-col gap-5 items-center sm:flex-row bg-slate-100 gradient-hover-inner">
+          <div id="left" class="flex flex-col gap-6 sm:flex-1">
+            <span
+              class="border-2 font-loony border-purple-300 bg-purple-200 text-purple-600 w-fit px-3 py-1 rounded-lg font-semibold">Anime</span>
+            <h2 class="text-3xl font-loony sm:text-4xl sm:font-medium">Watch all your favourite anime</h2>
+            <p class="text-lg text-purple-500 font-loony">"Stream your favorite anime in HD. Create your watchlist,
+              track progress, and discover trending shows with zero ads or interruptions."</p>
+            <ul class="grid grid-cols-2 gap-2">
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+            </ul>
+          </div>
+          <div class="right pt-12  sm:pt-0 sm:flex-1 flex justify-center xl:justify-end xl:me-15">
+
+            <img src="assets/w1.jpg" alt=""
+              class="border-2 border-white bg-[#f0eaff] 
+         shadow-[8px_8px_16px_#d4c8ff,_-8px_-8px_16px_#ffffff] hover:scale-95 hover:shadow-image transition-all duration-200 ease-in-out rounded-xl max-h-[230px] max-w-[230px] md:max-h-[292px] md:max-w-[292px] lg:max-h-[320px] lg:max-w-[320px]  xl:max-h-[350px] xl:max-w-[350px]">
+          </div>
+        </div>
+      </div>
+      <div class="p-[1px] rounded-xl border  border-purple-200">
+        <div id="cont-1" class="rounded-xl  px-8 py-12 flex flex-col gap-5 items-center sm:flex-row  gradient-hover-inner bg-slate-100">
+          <div id="left" class="flex flex-col gap-6 sm:flex-1">
+            <span
+              class="border-2 font-loony border-purple-300 bg-purple-200 text-purple-600 w-fit px-3 py-1 rounded-lg font-semibold">Manhwa</span>
+            <h2 class="text-3xl font-loony sm:text-4xl sm:font-medium">Read all Your favorite Manhwa</h2>
+            <p class="text-lg text-purple-500 font-loony">"Dive into stunning manhwa stories in full color. Follow your
+              favorite webtoons, track updates, and enjoy seamless chapter navigation without ads."
+            </p>
+            <ul class="grid grid-cols-2 gap-2">
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+            </ul>
+          </div>
+          <div class="right pt-12  sm:pt-0 sm:flex-1 flex justify-center xl:justify-end xl:me-15">
+
+            <img src="assets/w3.jpg" alt=""
+              class="border-2 border-white bg-[#f0eaff] 
+         shadow-[8px_8px_16px_#d4c8ff,_-8px_-8px_16px_#ffffff] hover:scale-95 hover:shadow-image transition-all duration-200 ease-in-out rounded-xl max-h-[230px] max-w-[230px] md:max-h-[292px] md:max-w-[292px] lg:max-h-[320px] lg:max-w-[320px]  xl:max-h-[350px] xl:max-w-[350px]">
+          </div>
+        </div>
+      </div>
+      <div class="p-[1px] rounded-xl border border-purple-200">
+        <div id="cont-1" class="rounded-xl  px-8 py-12 flex flex-col gap-5 items-center sm:flex-row bg-slate-100 gradient-hover-inner">
+          <div id="left" class="flex flex-col gap-6 sm:flex-1">
+            <span
+              class="border-2 font-loony border-purple-300 bg-purple-200 text-purple-600 w-fit px-3 py-1 rounded-lg font-semibold">Manga</span>
+            <h2 class="text-3xl font-loony sm:text-4xl sm:font-medium">Read all your favourite Manga</h2>
+            <p class="text-lg text-purple-500 font-loony">"Read your favorite manga in high quality. Build your reading
+              list, bookmark chapters, and explore latest releases across all popular genres."
+            </p>
+            <ul class="grid grid-cols-2 gap-2">
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+              <li class="flex gap-4 items-center group">
+                <i class="fa-solid fa-check group-hover:animate-wiggly text-purple-500"></i>
+                <a href="" class="sm:text-xl ">Top Anime</a>
+              </li>
+            </ul>
+          </div>
+          <div class="right pt-12  sm:pt-0 sm:flex-1 flex justify-center xl:justify-end xl:me-15">
+
+            <img src="assets/w2.jpg" alt=""
+              class="border-2 border-white bg-[#f0eaff] 
+         shadow-[8px_8px_16px_#d4c8ff,_-8px_-8px_16px_#ffffff] hover:scale-95 hover:shadow-image transition-all duration-200 ease-in-out rounded-xl max-h-[230px] max-w-[230px] md:max-h-[292px] md:max-w-[292px] lg:max-h-[320px] lg:max-w-[320px]  xl:max-h-[350px] xl:max-w-[350px]">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- bento - grid -->
+    <div id="bento-grid" class="px-6  sm:px-12 lg:px-36 pb-12 pt-8  max-w-screen mt-5 mx-auto  lg:mt-16">
+      <h2
+        class="font-loony  text-4xl text-center md:text-left sm:text-5xl font-bold mb-14 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent ">
+        Hot Topics</h2>
+      <div id="grid-container" class=" flex flex-col gap-6 md:grid md:grid-cols-2 md:grid-rows-4">
+
+
+        <div id="first"
+          class=" rounded-2xl mins-h-full w-full  flex flex-col gap-6 bg-slate-100  p-6 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100">
+          <span
+            class="border-2 font-loony border-purple-300 bg-purple-200 text-purple-600 w-fit px-3 py-1 rounded-lg font-semibold">New
+            Drops</span>
+          <img src="assets/noragami.png" alt="" class="max-h-24 self-center">
+
+        </div>
+
+
+        <div id="second"
+          class="col-start-2 col-end-3 row-start-1 row-end-3 rounded-2xl w-full max-h-full  flex flex-col gap-6 bg-slate-100 items-center justify-center p-6 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100">
+          <h3 class="text-center font-loony text-2xl font-semibold text-purple-500"> Demon Slayer Coming Soon</h3>
+
+          <img src="assets/demonslayerlogo.png" alt="" class="max-h-56">
+          <p class="text-lg text-center font-loony">The wait is almost over.
+
+            Demon Slayer returns with a blood-pumping new arc!
+
+            Demon Slayer returns with a blood-pumping new arc!</p>
+
+        </div>
+
+
+        <div id="third"
+          class="row-start-3 row-end-5 min-h-full rounded-2xl w-full  flex flex-col gap-6 bg-slate-100 items-center justify-center p-6 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100">
+          <h3 class="font-loony text-2xl font-semibold text-purple-500"> Jojo is Back!</h3>
+
+          <img src="assets/jojo.png" alt="" class="max-h-36">
+          <p class="text-lg text-center font-loony">The wait is almost over.
+            The Joestars rise again.
+            A new bizarre adventure is about to begin.
+
+            Stand proud, it's coming.
+            The next JoJo saga is nearly here!
+          </p>
+
+        </div>
+
+
+        <div id="fourth"
+          class="row-start-2 row-end-3 rounded-2xl max-h-full w-full  flex flex-col gap-8 bg-slate-100  p-6 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100">
+          <span
+            class="border-2 font-loony border-purple-300 bg-purple-200 text-purple-600 w-fit px-3 py-1 rounded-lg font-semibold">New
+            Drops</span>
+          <img src="assets/deathnote.png" alt="" class="max-h-24 self-center">
+
+        </div>
+
+
+
+        <div id="fifth"
+          class="row-start-3 row-end-5 rounded-2xl w-full min-h-full flex flex-col gap-6 bg-slate-100 items-center justify-center p-6 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100">
+          <h3 class="font-loony text-2xl font-semibold text-purple-500">Guts is here!</h3>
+
+          <img src="assets/berserk.png" alt="" class="max-h-44">
+          <p class="text-lg text-center font-loony">The Black Swordsman walks again.
+            Vengeance sharpens its blade — coming soon.
+
+            In a world drowned in darkness...</p>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Otaku Stories -->
+<div id="testimonials" class="container px-6  sm:px-12 lg:px-36 pb-12 pt-8  max-w-screen mt-5 mx-auto  lg:mt-16">
+  <h2 class=" sm:font-semibold  font-loony  text-4xl text-center md:text-left sm:text-5xl font-bold mb-14 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Fan Stories</h2>
+  <div class="rounded-xl border flex flex-col lg:flex-row items-end bg-slate-100 gradient-hover-inner">
+    <div class="flex flex-col gap-12 p-8">
+      <div class="">
+        <img src="assets/Anime away face.svg" alt="" class="h-12">
+      </div>
+      <h3 class="text-xl leading-relaxed">
+        OtakuBox used AnimeCore to bring their anime streaming hub to fans in days instead of months.
+      </h3>
+      <div id="tag-container" class="flex gap-3 flex-wrap">
+        <div class="flex gap-2 items-center justify-center bg-purple-200 w-fit border border-purple-300 px-3 py-1 rounded-md text-purple-800">
+          <i class="fa-solid fa-check"></i>
+          <span class="font-display font-medium">Immersive UI</span>
+        </div>
+        <div class="flex gap-2 items-center justify-center bg-purple-200 w-fit border border-purple-300 px-3 py-1 rounded-md text-purple-800">
+          <i class="fa-solid fa-check"></i>
+          <span class="font-display font-medium">Subtitles Built-In</span>
+        </div>
+        <div class="flex gap-2 items-center justify-center bg-purple-200 w-fit border border-purple-300 px-3 py-1 rounded-md text-purple-800">
+          <i class="fa-solid fa-check"></i>
+          <span class="font-display font-medium">Episode Tracker</span>
+        </div>
+        <div class="flex gap-2 items-center justify-center bg-purple-200 w-fit border border-purple-300 px-3 py-1 rounded-md text-purple-800">
+          <i class="fa-solid fa-check"></i>
+          <span class="font-display font-medium">Watch Count in Dock</span>
+        </div>
+        <div class="flex gap-2 items-center justify-center bg-purple-200 w-fit border border-purple-300 px-3 py-1 rounded-md text-purple-800">
+          <i class="fa-solid fa-check"></i>
+          <span class="font-display font-medium">Global Hotkey for Watchlist</span>
+        </div>
+      </div>
+      <p class="text-lg font-light text-gray-500">
+        “AnimeCore gave us a <span class="text-gray-800">sleek, high-performance app</span> instantly. Their passionate team helped us smoothly move from our old setup, delivering <span class="text-gray-800">exciting new features</span> to fans in record time.”
+      </p>
+      <div id="user-card" class="flex gap-4">
+        <div class="w-12">
+          <img src="assets/Dragon ball.svg" class="rounded-full" alt="">
+        </div>
+        <div class="flex flex-col">
+          <h3>Hikaru Sato</h3>
+          <p class="text-gray-500">Founder & CEO, <a href="#" class="anchor-hover">OtakuBox</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="" >
+      <img src="assets/demonslayerpos.jpeg" class="pl-16 rounded-xl max-h-[500px] lg:max-h-[190vh]  " alt="">
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row justify-between gap-4 mt-6">
+    <div class="rounded-2xl gradient-hover-outer group flex-1">
+      <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-purple-200 flex items-center justify-center rounded-full">
+            <i class="fa-solid fa-film text-purple-800"></i>
+          </div>
+          <h3 class="text-2xl font-semibold">Built for Anime</h3>
+        </div>
+        <p class="text-lg font-light">
+          AnimeCore makes it easy to integrate features like voiceovers, episode timers, and character bios right into your anime platform — creating an immersive experience for fans.
+        </p>
+        <div class="flex gap-4">
+          <div class="flex">
+            <div class="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+              <img src="assets/naruto.png" class="min-w-16 min-h-16" alt="">
+            </div>
+            <div class="w-12 h-12 rounded-full overflow-hidden border border-white">
+              <img src="assets/guts.png" alt="">
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <h3>Yuki Arai</h3>
+            <a href="#" class="anchor-hover w-fit text-gray-500">AniStream</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl gradient-hover-outer group flex-1">
+      <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6 h-full">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-purple-200 flex items-center justify-center rounded-full">
+            <i class="fa-solid fa-clapperboard text-purple-800"></i>
+          </div>
+          <h3 class="text-2xl font-semibold">Offline Episodes</h3>
+        </div>
+        <p class="text-lg font-light">
+          We gave our users offline access to full anime libraries thanks to AnimeCore. It's made binge-watching while traveling smoother than ever.
+        </p>
+        <div class="flex gap-4">
+          <div class="flex">
+            <div class="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+              <img src="assets/Anime away face.svg" class="min-w-16 min-h-16" alt="">
+            </div>
+            <div class="w-12 h-12 rounded-full overflow-hidden   border border-white">
+              <img src="assets/light.png" alt="">
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <h3>Kenta Mori</h3>
+            <a href="#" class="anchor-hover w-fit text-gray-500">ZenView</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl gradient-hover-outer group flex-1">
+      <div class="rounded-2xl p-6 gradient-hover-inner flex flex-col gap-6 h-full">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-purple-200 flex items-center justify-center rounded-full ">
+            <i class="fa-solid fa-heart text-purple-800"></i>
+          </div>
+          <h3 class="text-2xl font-semibold">Fan-First Design</h3>
+        </div>
+        <p class="text-lg font-light">
+          AnimeCore listens to fan feedback and delivers updates that actually matter — from theme music previews to custom subtitle fonts.
+        </p>
+        <div class="flex gap-4">
+          <div class="flex">
+            <div class="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+              <img src="assets/saber.png" class="min-w-16 min-h-16" alt="">
+            </div>
+            <div class="w-12 h-12 rounded-full overflow-hidden border border-white">
+              <img src="assets/ichigo.png" alt="">
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <h3>Emiko Tanaka</h3>
+            <a href="#" class="anchor-hover w-fit text-gray-500">OtakuTV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rounded-2xl flex flex-col bg-black lg:flex-row mt-12 pt-6 lg:pt-10">
+    <div class="flex flex-col gap-4 p-8 lg:flex-1 lg:gap-8 ">
+      <span class="text-gray-400 font-display font-medium">READY TO STREAM?</span>
+      <h2 class="text-4xl text-white leading-tight lg:text-5xl">Create your anime app for free*</h2>
+      <p class="text-lg font-light text-gray-400 lg:text-xl">AnimeCore Builder will guide you through creating your personalized anime platform in just a few minutes.</p>
+      <button class="bg-purple-500 text-white py-3 rounded-lg hover:bg-opacity-90 flex justify-center items-center gap-4 ">
+        <i class="fa-solid fa-play"></i>
+        <span class="">Launch AnimeCore Builder</span>
+      </button>
+      <p class="text-gray-400 text-xs italic leading-tight">*You can build and run your anime app locally for free. Publishing options are available for advanced features.</p>
+    </div>
+    <div class="lg:w-1/2">
+      <img src="assets/kanekiken.jpg" class="pl-12 rounded-xl max-h-[500px] lg:max-h-[190vh]" alt="">
+    </div>
+  </div>
+</div>
+
+    </div>
+    </div>
+  
+  </main>
+  <footer class="container max-w-screen">
+  <div class="rounded-lg border border-purple-500    bg-slate-100  flex flex-col  items-center px-8 py-12 gap-8 ">
+    
+    <a href="#" class=" font-display text-purple-500 font-bold text-xl font-loony">Help & FAQs</a>
+
+
+    <div class="flex gap-8 text-lg">
+      <a href="#" class="text-gray-600 hover:text-purple-700"><i class="fa-brands fa-discord text-purple-500"></i></a>
+      <a href="#" class="text-gray-600 hover:text-purple-700"><i class="fa-brands fa-x-twitter text-purple-500"></i></a>
+      <a href="#" class="text-gray-600 hover:text-purple-700"><i class="fa-brands fa-youtube text-purple-500"></i></a>
+    </div>
+
+    <!-- Brand -->
+     <div>
+    <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+      <img class="object-cover max-w-12 max-h-12" src="assets/Anime away face.svg" alt="AnimeCore Logo">
+      <span class="text-lg  font-loony font-bold text-purple-500">AnimeCore</span>
+
+    </a>
+  </div>
+
+  <!-- Sub-footer -->
+ </footer>
+  <audio id="bubbleSound" src="assets/bubble1.mp3" preload="auto" class="hidden"></audio>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+<script src="script.js"></script>
+
+</html>

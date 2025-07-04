@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+
+@theme {
+    --font-loony: poppins, sans-serif;
+    --font-toon: sans-serif;
+
+ 
+}
+
+.sm-cards{
+    @apply hover:-translate-y-2 hover:scale-105 hover:shadow-xl active:scale-105 active:shadow-xl transition-transform duration-300 ease-in-out;
+}
+.nav-anchor {
+    @apply transition duration-200 ease-in-out font-loony font-semibold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:-translate-y-0.5;
+}
+
+.nav-toggle {
+    @apply w-fit inline-block transition duration-200 ease-in-out font-loony font-medium bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:-translate-y-0.5;
+}
+
+
+
+.lift {
+    @apply transition duration-200 ease-in-out  hover:-translate-y-0.5 ;
+
+}
+.gradient-hover-inner{
+    @apply bg-slate-100 hover:bg-gradient-to-br hover:from-purple-100 hover:via-blue-100 hover:to-pink-100
+}
+
+@layer base {
+    body {
+        @apply font-toon;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-loony text-gray-800 font-medium;
+    }
+}
+
+@theme {
+    --animate-wiggly: wiggle 0.5s ease-in-out infinite;
+    --animate-arrow : right 0.5s ease-in-out infinite;
+    --animate-thunder : bolt 0.5s ease-in-out infinite;
+
+    @keyframes wiggle {
+
+        0%,
+        100% {
+            transform: rotate(-3deg);
+        }
+
+        50% {
+            transform: rotate(3deg);
+        }
+    }
+    @keyframes right{
+        0%,100%{
+            transform : translateX(1px);
+        }50%{
+            transform : translateX(-1px);
+        }
+    }
+    @keyframes bolt{
+        0% , 100% {
+            transform : translateY(1px);
+
+        }50%{
+            transform : translateY(-1px);
+        }
+    }
+}
